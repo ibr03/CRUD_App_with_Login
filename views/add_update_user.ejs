@@ -1,0 +1,54 @@
+<!--include header-->
+<%- include('include/_header') %>
+<!--/include header-->
+
+    <div class="container">
+        <div class="d-flex justify-between">
+            <div class="filter">
+                <a href="/user"><i class="fas fa-angle-double-left"></i><strong>All Users</strong></a>
+            </div>
+        </div>
+        <div class="form-title text-center mb-2">
+            <span><strong>Use the form below to add or update user details</strong></span>
+        </div>
+
+        <!--add user form-->
+        <!-- form handling-->
+        <form method="POST" autocomplete="off">
+            <input type="hidden" name="id" value="<%= user._id %>">
+            <div class="col-md-6 m-auto">
+                <div class="card card-body">
+                    <div class="form-group">
+                        <label for="name" class="mb-2"><strong>Name</strong></label>
+                        <input type="text" name="name" value="<%= user.name %>" placeholder="John Doe" class="form-control mb-2">
+                        <div class="text-danger"><%= user.nameError %></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="mb-2"><strong>E-mail</strong></label>
+                        <input type="email" name="email" value="<%= user.email %>" placeholder="abc@gmail.com" class="form-control mb-2">
+                        <div class="text-danger"><%= user.emailError %></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="mb-2"><strong>Phone Number</strong></label>
+                        <input type="text" name="phone" value="<%= user.phone %>" placeholder="9999999999" class="form-control mb-2">
+                        <div class="text-danger"><%= user.phoneError %></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city" class="mb-2"><strong>City</strong></label>
+                        <input type="text" name="city" value="<%= user.city %>" placeholder="Delhi" class="form-control mb-2">
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block form-control mt-3">Save</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- /form handling-->
+    </div>
+
+<!--include footer-->
+<%- include('include/_footer') %>
+<!--/include footer-->
